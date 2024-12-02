@@ -1,0 +1,137 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #004f8c; /* Dark Blue */
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo a:hover {
+  color: #ff6600; /* E-commerce accent color */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-bar input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.search-btn {
+  padding: 0.5rem 1rem;
+  background-color: #ff6600; /* E-commerce accent color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #ff4500; /* Darker orange for hover effect */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff6600;
+}
+
+.user-cart {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.user-cart .cart-icon,
+.user-cart .user-icon {
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.user-cart .cart-icon:hover,
+.user-cart .user-icon:hover {
+  color: #ff6600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 150px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .user-cart {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .search-bar {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .user-cart {
+    margin-top: 1rem;
+  }
+}
