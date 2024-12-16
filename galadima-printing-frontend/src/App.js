@@ -1,21 +1,22 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Order from "./pages/Order";
-import Contact from "./pages/Contact";
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home'; // Correct import
+import SignUp from './pages/SignUp';
+import Products from './components/Products';
+import Checkout from './components/Checkout';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/products" component={Products} />
-        <Route path="/order" component={Order} />
-        <Route path="/contact" component={Contact} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;
