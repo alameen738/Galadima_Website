@@ -1,58 +1,82 @@
 // src/pages/Login.js
 import React, { useState } from 'react';
-import './Login.css';  // Ensure the CSS file is correctly linked
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can add your logic for login submission here
-    console.log('Form submitted:', formData);
+    setLoading(true);
+    setError('');
+
+    // Validate inputs
+    if (!email || !password) {
+      setError('Please fill out all fields');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      // Check if login was successful
+      if (!response.ok) {
+        throw new Error('Failed to login');
+      }
+
+      const data = await response.json();
+      console.log('Login successful:', data);
+
+      // Redirect or update state upon successful login
+      // For example:
+      // window.location.href = '/dashboard'; // Redirect to dashboard
+
+    } catch (error) {
+      console.error('Error during login request:', error);
+      setError('Error during login request');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <h2 className="login-title">Welcome Back!</h2>
-        <p className="login-subtitle">Log in to access your account.</p>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="form-group">
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Email Address"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Password"
-              required
-            />
-          </div>
-          <button type="submit" className="login-button">Log In</button>
-        </form>
-        <div className="login-footer">
-          Don't have an account? <a href="/signup">Sign up here</a>.
+    <div className="login-container">
+      <h2>Login</h2>
+      {error && <div className="error-message">{error}</div>}
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
-      </div>
+        <div className="form-group">
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
+      </form>
     </div>
   );
 };
 
-export default Login;
+export default Login;  // Ensure this is present

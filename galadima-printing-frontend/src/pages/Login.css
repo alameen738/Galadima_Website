@@ -1,27 +1,16 @@
 /* src/pages/Login.css */
-
-/* General styling */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
-}
-
-/* Login Page Styling */
 .login-page {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
 }
 
 .login-card {
   background-color: #fff;
-  padding: 40px;
-  border-radius: 10px;
+  border-radius: 8px;
+  padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
@@ -29,54 +18,67 @@ body {
 }
 
 .login-title {
-  font-size: 2.2em;
-  color: #3498db;
+  font-size: 2em;
   margin-bottom: 20px;
+  color: #3498db;
 }
 
 .login-subtitle {
   font-size: 1.2em;
+  margin-bottom: 20px;
   color: #555;
-  margin-bottom: 30px;
 }
 
-.login-form .form-group {
-  margin-bottom: 15px;
-}
-
-.login-form input {
+.login-form {
   width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 1.1em;
 }
 
-.login-form input:focus {
+.form-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+input:focus {
   border-color: #3498db;
   outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 15px;
 }
 
 .login-button {
   background-color: #3498db;
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
+  padding: 10px;
   font-size: 1.1em;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
   width: 100%;
-  margin-top: 20px;
 }
 
-.login-button:hover {
+.login-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.login-button:hover:enabled {
   background-color: #2980b9;
 }
 
 .login-footer {
   margin-top: 20px;
-  font-size: 1em;
 }
 
 .login-footer a {
