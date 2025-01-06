@@ -1,25 +1,37 @@
-/* General styling */
+/* General Styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif; /* Clean and modern font */
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #F0F4F8; /* Soft blue-gray background */
+  color: #2D2D2D; /* Dark gray text for readability */
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #FF6F61; /* Coral for hover effect */
 }
 
 /* Header Section */
 .header {
-  background-color: #3498db; /* Blue color */
+  background-color: #374785; /* Deep blue */
   color: white;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo h1 {
-  margin: 0;
   font-size: 1.8em;
+  margin: 0;
 }
 
 .nav {
@@ -28,27 +40,27 @@ body {
 
 .nav-link {
   color: white;
-  text-decoration: none;
   margin-left: 20px;
   font-size: 1.1em;
+  font-weight: 500;
 }
 
 .nav-link:hover {
-  text-decoration: underline;
+  color: #FFD460; /* Golden yellow for hover */
 }
 
 /* Hero Section */
 .hero {
-  background-color: #3498db; /* Blue background */
+  background-color: #FF6F61; /* Coral background */
   color: white;
-  padding: 100px 0;
+  padding: 100px 20px;
   text-align: center;
   position: relative;
 }
 
 .hero-content h2 {
-  font-size: 2.5em;
-  margin: 0;
+  font-size: 2.8em;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
@@ -57,46 +69,57 @@ body {
 }
 
 .cta-button {
-  background-color: #2980b9;
-  padding: 10px 20px;
-  color: white;
+  background-color: #FFD460; /* Golden yellow */
+  padding: 15px 30px;
+  color: #374785; /* Deep blue text */
   font-size: 1.1em;
-  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #1f6a8c;
+  background-color: #FFC34E; /* Slightly darker yellow on hover */
 }
 
 /* Featured Products Section */
 .featured-products {
   padding: 60px 20px;
+  background-color: #F0F4F8; /* Light background for contrast */
   text-align: center;
 }
 
 .featured-products h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
+  color: #374785; /* Deep blue */
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
 .product-card {
-  background-color: #fff;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
 }
 
 .product-card h3 {
   font-size: 1.8em;
   margin: 0 0 10px;
+  color: #FF6F61; /* Coral */
 }
 
 .product-card p {
@@ -105,56 +128,68 @@ body {
 
 .product-card .price {
   font-size: 1.2em;
-  color: #3498db;
-  margin: 10px 0;
+  color: #374785; /* Deep blue */
+  margin: 15px 0;
 }
 
 .product-card .add-to-cart {
-  background-color: #3498db;
+  background-color: #FF6F61; /* Coral */
   color: white;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
 }
 
 .product-card .add-to-cart:hover {
-  background-color: #2980b9;
+  background-color: #E85D55; /* Slightly darker coral */
 }
 
 /* Services Section */
 .services {
   padding: 60px 20px;
-  background-color: #ecf0f1;
+  background-color: #FFD460; /* Golden yellow background */
   text-align: center;
 }
 
 .services h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
+  color: #374785; /* Deep blue */
 }
 
 .service-cards {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .service-card {
-  background-color: #fff;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 30%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-5px); /* Subtle lift */
 }
 
 .service-card h3 {
   font-size: 1.8em;
   margin: 0;
+  color: #FF6F61; /* Coral */
 }
 
 /* Contact Section */
 .contact {
   padding: 60px 20px;
+  background-color: #F0F4F8; /* Light background */
   text-align: center;
 }
 
@@ -163,17 +198,17 @@ body {
 }
 
 .contact-info a {
-  color: #3498db;
+  color: #374785; /* Deep blue links */
   text-decoration: none;
 }
 
 .contact-info a:hover {
-  text-decoration: underline;
+  color: #FF6F61; /* Coral on hover */
 }
 
 /* Footer Section */
 .footer {
-  background-color: #2c3e50;
+  background-color: #374785; /* Deep blue */
   color: white;
   text-align: center;
   padding: 20px;
@@ -184,11 +219,10 @@ body {
 }
 
 .footer-links a {
-  color: white;
-  text-decoration: none;
+  color: #FFD460; /* Golden yellow links */
   margin: 0 10px;
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
+  color: #FFC34E; /* Slightly darker yellow */
 }
