@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Home.css"; // Ensure your CSS file path is correct
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -8,7 +8,7 @@ const Home = () => {
       {/* Header Section */}
       <header className="header">
         <div className="logo">
-          <h1>Galadima Printing</h1>
+          <h1>Galadima Printing Press</h1>
         </div>
         <nav className="nav">
           <Link to="/" className="nav-link">Home</Link>
@@ -22,32 +22,32 @@ const Home = () => {
       <section className="hero">
         <div className="hero-content">
           <h2>Welcome to Galadima Printing Press</h2>
-          <p>Discover premium printing services for all your business needs!</p>
+          <p>Your trusted partner for premium printing services and products.</p>
           <Link to="/signup" className="cta-button">
-            Sign Up Now
+            Get Started
           </Link>
         </div>
       </section>
 
       {/* Featured Products Section */}
       <section className="featured-products">
-        <h2>Featured Products</h2>
+        <h2 className="section-title">Featured Products</h2>
         <div className="product-grid">
           <div className="product-card">
             <h3>A4 Paper</h3>
-            <p>High-quality A4 paper for your printing needs</p>
+            <p>High-quality paper for all your printing needs.</p>
             <span className="price">₦60</span>
             <button className="add-to-cart">Add to Cart</button>
           </div>
           <div className="product-card">
             <h3>A3 Paper</h3>
-            <p>Perfect for large prints and posters</p>
+            <p>Perfect for posters and large prints.</p>
             <span className="price">₦120</span>
             <button className="add-to-cart">Add to Cart</button>
           </div>
           <div className="product-card">
             <h3>A4 Art Card</h3>
-            <p>Quality art card for professional designs</p>
+            <p>Professional-quality art card for creative designs.</p>
             <span className="price">₦150</span>
             <button className="add-to-cart">Add to Cart</button>
           </div>
@@ -56,24 +56,27 @@ const Home = () => {
 
       {/* Services Section */}
       <section className="services">
-        <h2>Our Services</h2>
-        <div className="service-cards">
+        <h2 className="section-title">Our Services</h2>
+        <div className="service-grid">
           <div className="service-card">
             <h3>Binding</h3>
+            <p>Professional binding for all document types.</p>
           </div>
           <div className="service-card">
-            <h3>Business Card Design</h3>
+            <h3>Business Card Printing</h3>
+            <p>Custom business card designs that stand out.</p>
           </div>
           <div className="service-card">
-            <h3>Banner Design</h3>
+            <h3>Banner Printing</h3>
+            <p>Eye-catching banners for promotions and events.</p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="contact">
-        <h2>Get in Touch</h2>
-        <p>If you have any questions, feel free to contact us.</p>
+        <h2 className="section-title">Get in Touch</h2>
+        <p>Have questions or need assistance? Contact us today!</p>
         <div className="contact-info">
           <p>Email: <a href="mailto:alameen738@gmail.com">alameen738@gmail.com</a></p>
           <p>Phone: <a href="tel:+2348068989600">+2348068989600</a></p>
