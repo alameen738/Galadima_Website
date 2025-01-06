@@ -1,10 +1,10 @@
 /* General Styling */
 body {
-  font-family: 'Roboto', Arial, sans-serif; /* Clean and modern font */
+  font-family: 'Roboto', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #F0F4F8; /* Soft blue-gray background */
-  color: #2D2D2D; /* Dark gray text for readability */
+  background-color: #F9FAFB; /* Light background for consistency */
+  color: #2D2D2D;
   line-height: 1.6;
 }
 
@@ -15,14 +15,14 @@ a {
 }
 
 a:hover {
-  color: #FF6F61; /* Coral for hover effect */
+  color: #FF6F61;
 }
 
 /* Header Section */
 .header {
-  background-color: #374785; /* Deep blue */
+  background-color: #374785;
   color: white;
-  padding: 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,20 +46,19 @@ a:hover {
 }
 
 .nav-link:hover {
-  color: #FFD460; /* Golden yellow for hover */
+  color: #FFD460;
 }
 
 /* Hero Section */
 .hero {
-  background-color: #FF6F61; /* Coral background */
+  background-color: #FF6F61;
   color: white;
-  padding: 100px 20px;
+  padding: 80px 20px;
   text-align: center;
-  position: relative;
 }
 
 .hero-content h2 {
-  font-size: 2.8em;
+  font-size: 3em;
   margin-bottom: 10px;
 }
 
@@ -69,9 +68,9 @@ a:hover {
 }
 
 .cta-button {
-  background-color: #FFD460; /* Golden yellow */
+  background-color: #FFD460;
   padding: 15px 30px;
-  color: #374785; /* Deep blue text */
+  color: #374785;
   font-size: 1.1em;
   text-transform: uppercase;
   font-weight: bold;
@@ -82,20 +81,20 @@ a:hover {
 }
 
 .cta-button:hover {
-  background-color: #FFC34E; /* Slightly darker yellow on hover */
+  background-color: #FFC34E;
 }
 
 /* Featured Products Section */
 .featured-products {
   padding: 60px 20px;
-  background-color: #F0F4F8; /* Light background for contrast */
+  background-color: #F9FAFB;
   text-align: center;
 }
 
 .featured-products h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
-  color: #374785; /* Deep blue */
+  color: #374785;
 }
 
 .product-grid {
@@ -109,33 +108,42 @@ a:hover {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   transition: transform 0.2s ease-in-out;
 }
 
 .product-card:hover {
-  transform: translateY(-5px); /* Subtle lift effect */
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .product-card h3 {
-  font-size: 1.8em;
+  font-size: 1.5em;
   margin: 0 0 10px;
-  color: #FF6F61; /* Coral */
+  color: #FF6F61;
 }
 
 .product-card p {
-  font-size: 1.1em;
+  font-size: 1em;
+  color: #555;
 }
 
 .product-card .price {
   font-size: 1.2em;
-  color: #374785; /* Deep blue */
+  color: #374785;
   margin: 15px 0;
 }
 
 .product-card .add-to-cart {
-  background-color: #FF6F61; /* Coral */
+  background-color: #FF6F61;
   color: white;
-  padding: 10px;
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -144,20 +152,20 @@ a:hover {
 }
 
 .product-card .add-to-cart:hover {
-  background-color: #E85D55; /* Slightly darker coral */
+  background-color: #E85D55;
 }
 
 /* Services Section */
 .services {
   padding: 60px 20px;
-  background-color: #FFD460; /* Golden yellow background */
+  background-color: #FFD460;
   text-align: center;
 }
 
 .services h2 {
   font-size: 2.5em;
   margin-bottom: 30px;
-  color: #374785; /* Deep blue */
+  color: #374785;
 }
 
 .service-cards {
@@ -177,38 +185,18 @@ a:hover {
 }
 
 .service-card:hover {
-  transform: translateY(-5px); /* Subtle lift */
+  transform: translateY(-5px);
 }
 
 .service-card h3 {
   font-size: 1.8em;
   margin: 0;
-  color: #FF6F61; /* Coral */
-}
-
-/* Contact Section */
-.contact {
-  padding: 60px 20px;
-  background-color: #F0F4F8; /* Light background */
-  text-align: center;
-}
-
-.contact-info p {
-  font-size: 1.2em;
-}
-
-.contact-info a {
-  color: #374785; /* Deep blue links */
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  color: #FF6F61; /* Coral on hover */
+  color: #FF6F61;
 }
 
 /* Footer Section */
 .footer {
-  background-color: #374785; /* Deep blue */
+  background-color: #374785;
   color: white;
   text-align: center;
   padding: 20px;
@@ -219,10 +207,80 @@ a:hover {
 }
 
 .footer-links a {
-  color: #FFD460; /* Golden yellow links */
+  color: #FFD460;
   margin: 0 10px;
 }
 
 .footer-links a:hover {
-  color: #FFC34E; /* Slightly darker yellow */
+  color: #FFC34E;
+}
+
+/* Cart and Checkout Section */
+.cart-container {
+  padding: 40px 20px;
+  background-color: #FFFFFF;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.cart-item-details {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.cart-item h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.cart-item .price {
+  font-size: 1em;
+  color: #555;
+}
+
+.cart-item .remove {
+  color: #FF6F61;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.cart-item .remove:hover {
+  text-decoration: underline;
+}
+
+/* Checkout Button */
+.checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #FF6F61;
+  color: white;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #E85D55;
 }

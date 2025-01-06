@@ -1,5 +1,5 @@
-// src/pages/Login.js
 import React, { useState } from 'react';
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ const Login = () => {
 
     // Validate inputs
     if (!email || !password) {
-      setError('Please fill out all fields');
+      setError('Please fill out all fields.');
       setLoading(false);
       return;
     }
@@ -28,21 +28,22 @@ const Login = () => {
         body: JSON.stringify({ email, password }),
       });
 
-      // Check if login was successful
       if (!response.ok) {
-        throw new Error('Failed to login');
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Login failed.');
       }
 
       const data = await response.json();
       console.log('Login successful:', data);
 
-      // Redirect or update state upon successful login
-      // For example:
-      // window.location.href = '/dashboard'; // Redirect to dashboard
+      // Store token in localStorage
+      localStorage.setItem('authToken', data.token);
 
-    } catch (error) {
-      console.error('Error during login request:', error);
-      setError('Error during login request');
+      // Redirect to another page (e.g., dashboard)
+      window.location.href = '/dashboard';
+    } catch (err) {
+      console.error('Error during login:', err);
+      setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -79,4 +80,4 @@ const Login = () => {
   );
 };
 
-export default Login;  // Ensure this is present
+export default Login;
