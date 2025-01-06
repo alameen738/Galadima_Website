@@ -8,7 +8,6 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   });
-
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -17,57 +16,30 @@ const SignUp = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setError("");
-    setSuccessMessage("");
+    setError(""); // Clear any previous errors
+    setSuccessMessage(""); // Clear any success messages
 
-    // Input validation
-    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
-      setError("All fields are required.");
-      return;
-    }
-
-    if (formData.password.length < 6) {
-      setError("Password must be at least 6 characters long.");
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match.");
-      return;
-    }
-
-    try {
-      // Replace with actual API endpoint
-      const response = await fetch("http://your-backend-url/api/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          password: formData.password,
-        }),
-      });
-
-      if (!response.ok) {
-        const { message } = await response.json();
-        setError(message || "Something went wrong. Please try again.");
+    // Simulate an API call with setTimeout
+    setTimeout(() => {
+      if (formData.password !== formData.confirmPassword) {
+        setError("Passwords do not match");
         return;
       }
 
-      setSuccessMessage("Account created successfully! You can now log in.");
+      // You can mock saving the form data (e.g., logging it)
+      console.log("Form submitted:", formData);
+      setSuccessMessage("Account created successfully!");
+
+      // Reset the form after submission
       setFormData({
         name: "",
         email: "",
         password: "",
         confirmPassword: "",
       });
-    } catch (err) {
-      setError("Network error. Please try again later.");
-    }
+    }, 1000); // Simulate a 1 second delay for the API response
   };
 
   return (
@@ -76,9 +48,6 @@ const SignUp = () => {
         <h2 className="signup-title">Join Galadima Printing</h2>
         <p className="signup-subtitle">Sign up to access premium printing services!</p>
         <form onSubmit={handleSubmit} className="signup-form">
-          {error && <div className="error-message">{error}</div>}
-          {successMessage && <div className="success-message">{successMessage}</div>}
-
           <div className="form-group">
             <input
               type="text"
@@ -119,8 +88,14 @@ const SignUp = () => {
               required
             />
           </div>
-          <button type="submit" className="signup-button">Sign Up</button>
+          <button type="submit" className="signup-button">
+            Sign Up
+          </button>
         </form>
+
+        {error && <p className="error-message">{error}</p>}
+        {successMessage && <p className="success-message">{successMessage}</p>}
+
         <div className="signup-footer">
           Already have an account? <a href="/login">Log in here</a>.
         </div>
